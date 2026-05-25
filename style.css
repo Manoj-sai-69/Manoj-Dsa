@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 10%;
+    background-color: #111827;
+
+    position: sticky;
+    top: 0;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.nav-links{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover{
+    color: #38bdf8;
+}
+
+/* HERO */
+
+.hero{
+    height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 0 10%;
+}
+
+.hero-content h1{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero-content p{
+    font-size: 20px;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+.hero-buttons{
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn{
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.primary-btn{
+    background-color: #38bdf8;
+    color: black;
+}
+
+.secondary-btn{
+    border: 2px solid #38bdf8;
+    color: white;
+}
+
+/* FEATURES */
+
+.features{
+    padding: 100px 10%;
+}
+
+.features h2{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+
+.feature-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+}
+
+.feature-card{
+    background-color: #1e293b;
+    padding: 40px 30px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.feature-card:hover{
+    transform: translateY(-10px);
+}
+
+.feature-card h3{
+    margin-bottom: 15px;
+    color: #38bdf8;
+}
+
+/* PREVIEW */
+
+.preview{
+    padding: 100px 10%;
+}
+
+.preview h2{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+
+.preview-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+}
+
+.preview-card{
+    background-color: #1e293b;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.preview-card:hover{
+    transform: scale(1.05);
+}
+
+.preview-card h3{
+    color: #38bdf8;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align: center;
+    padding: 30px;
+    background-color: #111827;
+    color: #94a3b8;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-content h1{
+        font-size: 40px;
+    }
+
+    .hero-buttons{
+        flex-direction: column;
+    }
+
+}
+
+
+
+
+/* CURRICULUM PAGE */
+
+.curriculum-header{
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.curriculum-header h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.curriculum-header p{
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+.search-section{
+    padding: 0 10% 50px;
+}
+
+.search-section input{
+    width: 100%;
+    padding: 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #1e293b;
+    color: white;
+
+    font-size: 16px;
+}
+
+.curriculum-container{
+    padding: 0 10% 100px;
+}
+
+.module-card{
+    background-color: #1e293b;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.module-header{
+    padding: 25px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #111827;
+}
+
+.module-header h2{
+    font-size: 24px;
+    color: #38bdf8;
+}
+
+.module-content{
+    display: none;
+    padding: 30px;
+}
+
+.topic{
+    margin-bottom: 30px;
+}
+
+.topic h3{
+    margin-bottom: 15px;
+    color: #f8fafc;
+}
+
+.topic ul{
+    margin-left: 20px;
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+.problem-section{
+    margin-top: 15px;
+}
+
+.problem-badge{
+    display: inline-block;
+
+    padding: 6px 12px;
+    border-radius: 20px;
+
+    background-color: #38bdf8;
+    color: black;
+
+    font-size: 14px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
