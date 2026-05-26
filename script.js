@@ -748,12 +748,13 @@ const curriculumData = [
     ]
     },
 
-    
+
 
 ];
 const curriculumContainer = document.getElementById("curriculumContainer");
 
 function renderCurriculum(data){
+    if (!curriculumContainer) return;
 
     curriculumContainer.innerHTML = "";
 
@@ -833,26 +834,44 @@ function renderCurriculum(data){
 
 }
 
+/* THEME SWITCHER */
+const themeToggle = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("siteTheme") || "dark";
+
+function applyTheme(theme) {
+    document.body.classList.toggle("light-theme", theme === "light");
+    if (themeToggle) {
+        themeToggle.textContent = theme === "light" ? "🌙" : "☀️";
+    }
+    localStorage.setItem("siteTheme", theme);
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
+        applyTheme(nextTheme);
+    });
+}
+
+applyTheme(savedTheme);
+
 renderCurriculum(curriculumData);
 
 /* SEARCH */
 
 const searchInput = document.getElementById("searchInput");
 
-searchInput.addEventListener("input",(e)=>{
+if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+        const value = e.target.value.toLowerCase();
 
-    const value = e.target.value.toLowerCase();
+        const filtered = curriculumData.filter((module) => {
+            return module.module.toLowerCase().includes(value) ||
+                module.topics.some((topic) =>
+                    topic.title.toLowerCase().includes(value)
+                );
+        });
 
-    const filtered = curriculumData.filter(module => {
-
-        return module.module.toLowerCase().includes(value) ||
-
-        module.topics.some(topic =>
-            topic.title.toLowerCase().includes(value)
-        );
-
+        renderCurriculum(filtered);
     });
-
-    renderCurriculum(filtered);
-
-});
+}
